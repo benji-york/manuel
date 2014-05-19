@@ -81,9 +81,9 @@ Also, instead of just a "start_match" attribute, the region will have
 start_match and end_match attributes.
 
     >>> region.start_match
-    <_sre.SRE_Match object at 0x...>
+    <..._sre.SRE_Match object...>
     >>> region.end_match
-    <_sre.SRE_Match object at 0x...>
+    <..._sre.SRE_Match object...>
 
 
 Regions must always consist of whole lines.
