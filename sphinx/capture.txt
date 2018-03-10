@@ -1,0 +1,1 @@
+../src/manuel/capture.txt
