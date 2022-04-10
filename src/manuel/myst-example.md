@@ -10,11 +10,16 @@ Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas se
 assert 3 == 3
 ```
 
+```python
+a = 'Achterbahn'
+```
+
 And now some invisible code (not for documenation).
 
 % invisible-code-block: python
 %
 % assert 4 == 4
 % assert 5 == 5
+% assert a == 'Achterbahn'
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
