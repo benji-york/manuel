@@ -12,3 +12,4 @@ __pycache__/
 coverage.xml
 htmlcov
 pyvenv.cfg
+.coverage.py39
