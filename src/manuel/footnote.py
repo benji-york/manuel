@@ -1,11 +1,11 @@
 import re
+
 import manuel
 
-FOOTNOTE_REFERENCE_LINE_RE = re.compile(r'^.*\[([^\]]+)]_.*$', re.MULTILINE)
-FOOTNOTE_REFERENCE_RE = re.compile(r'\[([^\]]+)]_')
-FOOTNOTE_DEFINITION_RE = re.compile(
-    r'^\.\.\s*\[\s*([^\]]+)\s*\].*$', re.MULTILINE)
-END_OF_FOOTNOTE_RE = re.compile(r'^\S.*$', re.MULTILINE)
+FOOTNOTE_REFERENCE_LINE_RE = re.compile(r"^.*\[([^\]]+)]_.*$", re.MULTILINE)
+FOOTNOTE_REFERENCE_RE = re.compile(r"\[([^\]]+)]_")
+FOOTNOTE_DEFINITION_RE = re.compile(r"^\.\.\s*\[\s*([^\]]+)\s*\].*$", re.MULTILINE)
+END_OF_FOOTNOTE_RE = re.compile(r"^\S.*$", re.MULTILINE)
 
 
 class FootnoteReference(object):
@@ -30,11 +30,11 @@ def find_footnote_references(document):
 
     # find the markers that show where footnotes have been referenced.
     for region in document.find_regions(FOOTNOTE_REFERENCE_LINE_RE):
-        assert region.source.count('\n') == 1
+        assert region.source.count("\n") == 1
         names = FOOTNOTE_REFERENCE_RE.findall(region.source)
         for name in names:
             if name not in footnote_names:
-                raise RuntimeError('Unknown footnote: %r' % name)
+                raise RuntimeError("Unknown footnote: %r" % name)
 
         assert names
         document.claim_region(region)
@@ -43,8 +43,7 @@ def find_footnote_references(document):
 
 @manuel.timing(manuel.LATE)
 def do_footnotes(document):
-    """Copy footnoted items into their appropriate position.
-    """
+    """Copy footnoted items into their appropriate position."""
     # first find all the regions that are in footnotes
     footnotes = {}
     name = None

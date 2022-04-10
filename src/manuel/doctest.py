@@ -1,9 +1,11 @@
 from __future__ import absolute_import
 
 import doctest
-import six
-import manuel
 import os.path
+
+import six
+
+import manuel
 
 DocTestRunner = doctest.DocTestRunner
 DebugRunner = doctest.DebugRunner
@@ -18,15 +20,14 @@ def parse(m, document, parser):
         if region.parsed:
             continue
         region_start = region.lineno
-        region_end = region.lineno + region.source.count('\n')
+        region_end = region.lineno + region.source.count("\n")
         for chunk in parser.parse(region.source):
             # If the chunk contains prose (as opposed to and example), skip it.
             if isinstance(chunk, str):
                 continue
 
             chunk._manual = m
-            chunk_line_count = (chunk.source.count('\n')
-                + chunk.want.count('\n'))
+            chunk_line_count = chunk.source.count("\n") + chunk.want.count("\n")
 
             split_line_1 = region_start + chunk.lineno
             split_line_2 = split_line_1 + chunk_line_count
@@ -53,8 +54,9 @@ def parse(m, document, parser):
 class DocTest(doctest.DocTest):
     def __init__(self, examples, globs, name, filename, lineno, docstring):
         # do everything like regular doctests, but don't make a copy of globs
-        doctest.DocTest.__init__(self, examples, globs, name, filename, lineno,
-            docstring)
+        doctest.DocTest.__init__(
+            self, examples, globs, name, filename, lineno, docstring
+        )
         self.globs = globs
 
 
@@ -62,7 +64,7 @@ def evaluate(m, region, document, globs):
     # If the parsed object is not a doctest Example then we don't need to
     # handle it.
 
-    if getattr(region.parsed, '_manual', None) is not m:
+    if getattr(region.parsed, "_manual", None) is not m:
         return
 
     result = DocTestResult()
@@ -77,16 +79,19 @@ def evaluate(m, region, document, globs):
     # Use the testrunner-set option flags when running these tests.
     old_optionflags = runner.optionflags
     runner.optionflags |= doctest._unittest_reportflags
-    runner.DIVIDER = '' # disable unwanted result formatting
+    runner.DIVIDER = ""  # disable unwanted result formatting
 
     # Here's where everything happens.
     example = region.parsed
     runner.run(
-        DocTest([example], globs, test_name,
-            document.location, region.lineno-1, None),
-        out=out, clear_globs=False)
+        DocTest(
+            [example], globs, test_name, document.location, region.lineno - 1, None
+        ),
+        out=out,
+        clear_globs=False,
+    )
 
-    runner.optionflags = old_optionflags # Reset the option flags.
+    runner.optionflags = old_optionflags  # Reset the option flags.
     region.evaluated = result
 
 
@@ -98,16 +103,20 @@ def format(document):
 
 
 class Manuel(manuel.Manuel):
-
     def __init__(self, optionflags=0, checker=None, parser=None):
-        self.runner = DocTestRunner(optionflags=optionflags,
-            checker=checker, verbose=False)
+        self.runner = DocTestRunner(
+            optionflags=optionflags, checker=checker, verbose=False
+        )
         self.debug_runner = DebugRunner(optionflags=optionflags, verbose=False)
+
         def evaluate_closure(region, document, globs):
             # capture "self"
             evaluate(self, region, document, globs)
+
         parser = parser or doctest.DocTestParser()
         manuel.Manuel.__init__(
             self,
             [lambda document: parse(self, document, parser)],
-            [evaluate_closure], [format])
+            [evaluate_closure],
+            [format],
+        )

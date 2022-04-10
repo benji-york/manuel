@@ -1,11 +1,13 @@
 import re
-import manuel
 import textwrap
 
-IGNORE_START = re.compile(r'^\.\.\s*ignore-next-block\s*$', re.MULTILINE)
-IGNORE_END = re.compile(r'(?<!ignore-next-block)\n\n(?=\S)|\Z')
+import manuel
+
+IGNORE_START = re.compile(r"^\.\.\s*ignore-next-block\s*$", re.MULTILINE)
+IGNORE_END = re.compile(r"(?<!ignore-next-block)\n\n(?=\S)|\Z")
 
 baseline = {}
+
 
 def find_ignores(document):
     for region in document.find_regions(IGNORE_START, IGNORE_END):
