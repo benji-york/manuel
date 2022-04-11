@@ -1,11 +1,11 @@
-name: Plone backend tests
+name: Tests
 
 on:
   push:
   pull_request:
 
 jobs:
-  plone_python:
+  python:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

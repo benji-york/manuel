@@ -30,5 +30,4 @@ jobs:
 
       - name: Test with tox
         run: |
-          tox -e linkcheck
-          tox -e plone6docs
+          tox -e docs
