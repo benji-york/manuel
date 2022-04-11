@@ -1,5 +1,8 @@
-.. image:: https://travis-ci.org/benji-york/manuel.png?branch=master
-   :target: https://travis-ci.org/benji-york/manuel
+.. image:: https://github.com/zopefoundation/manuel/actions/workflows/python.yml/badge.svg)
+    :target: https://github.com/rohberg/manuel/actions/workflows/python.yml
+
+.. image:: https://github.com/zopefoundation/manuel/actions/workflows/docs.yml/badge.svg)
+    :target: https://github.com/rohberg/manuel/actions/workflows/docs.yml
 
 .. image:: https://coveralls.io/repos/github/benji-york/manuel/badge.svg?branch=master
    :target: https://coveralls.io/github/benji-york/manuel?branch=master
