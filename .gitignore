@@ -13,3 +13,6 @@ coverage.xml
 htmlcov
 pyvenv.cfg
 .coverage.py39
+.eggs/
+eggs/
+lib/
