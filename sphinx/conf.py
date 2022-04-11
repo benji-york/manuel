@@ -17,4 +17,13 @@ todo_include_todos = False
 exclude_dirnames = ['manuel.egg-info']
 unused_docs = ['manuel/capture']
 
+# html_theme = 'nature'
+html_theme = "sphinx_book_theme"
+
+extensions = [
+    "myst_parser",
+]
+myst_enable_extensions = [
+    "deflist",
+]
 exclude_patterns = ['capture.txt']
