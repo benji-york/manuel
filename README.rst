@@ -1,8 +1,8 @@
 .. image:: https://github.com/zopefoundation/manuel/actions/workflows/python.yml/badge.svg
-    :target: https://github.com/rohberg/manuel/actions/workflows/python.yml
+    :target: https://github.com/zopefoundation/manuel/actions/workflows/python.yml
 
 .. image:: https://github.com/zopefoundation/manuel/actions/workflows/docs.yml/badge.svg
-    :target: https://github.com/rohberg/manuel/actions/workflows/docs.yml
+    :target: https://github.com/zopefoundation/manuel/actions/workflows/docs.yml
 
 .. image:: https://coveralls.io/repos/github/benji-york/manuel/badge.svg?branch=master
    :target: https://coveralls.io/github/benji-york/manuel?branch=master
