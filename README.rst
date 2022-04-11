@@ -1,7 +1,7 @@
-.. image:: https://github.com/zopefoundation/manuel/actions/workflows/python.yml/badge.svg)
+.. image:: https://github.com/zopefoundation/manuel/actions/workflows/python.yml/badge.svg
     :target: https://github.com/rohberg/manuel/actions/workflows/python.yml
 
-.. image:: https://github.com/zopefoundation/manuel/actions/workflows/docs.yml/badge.svg)
+.. image:: https://github.com/zopefoundation/manuel/actions/workflows/docs.yml/badge.svg
     :target: https://github.com/rohberg/manuel/actions/workflows/docs.yml
 
 .. image:: https://coveralls.io/repos/github/benji-york/manuel/badge.svg?branch=master
@@ -14,6 +14,6 @@
     :target: https://pypi.python.org/pypi/manuel/
 
 Documentation, a full list of included plug-ins, and examples are available at
-`<http://packages.python.org/manuel/>`_.
+`<https://manuel.readthedocs.io/en/latest/#included-functionality>`_.
 
-Source code and issues are managed at https://github.com/benji-york/manuel.
+Source code and issues are managed at https://github.com/zopefoundation/manuel.
