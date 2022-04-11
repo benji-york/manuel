@@ -1,4 +1,7 @@
-source_suffix = '.txt'
+source_suffix = {
+    '.txt': 'restructuredtext',
+    '.md': 'markdown',
+}
 master_doc = 'index'
 project = 'Manuel'
 copyright = 'Benji York'

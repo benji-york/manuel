@@ -36,6 +36,7 @@ To see how to get Manuel wired up see :ref:`getting-started`.
 .. contents::
 
 
+
 .. reset-globs
 .. _functionality:
 
@@ -1146,3 +1147,4 @@ Further Reading
     README.txt
     table-example.txt
     bugs.txt
+    myst-markdown.md
