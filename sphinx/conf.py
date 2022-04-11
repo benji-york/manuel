@@ -16,3 +16,5 @@ html_title = 'Manuel Documentation'
 todo_include_todos = False
 exclude_dirnames = ['manuel.egg-info']
 unused_docs = ['manuel/capture']
+
+exclude_patterns = ['capture.txt']
