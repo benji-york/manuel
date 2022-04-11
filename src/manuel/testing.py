@@ -170,9 +170,7 @@ def TestSuite(m, *paths, **kws):
     # walk up the stack frame to find the module that called this function
     for depth in range(1, 5):
         try:
-            calling_module = sys.modules[
-                sys._getframe(depth).f_globals["__name__"]
-            ]
+            calling_module = sys.modules[sys._getframe(depth).f_globals["__name__"]]
         except KeyError:
             continue
         else:

@@ -88,7 +88,7 @@ def break_up_region(original, new):
     # figure out if there are any lines after the given region
     assert new.source[-1] == "\n", "all lines must end with a newline"
     lines_in_new = new.source.count("\n")
-    after_lines = lines[len(before_lines) + lines_in_new:]
+    after_lines = lines[len(before_lines) + lines_in_new :]
     if after_lines:
         first_line_after_new = new.lineno + lines_in_new
         new_regions.append(Region(first_line_after_new, lines_to_string(after_lines)))
@@ -197,9 +197,9 @@ class Document(RegionContainer):
                     if end_match is None:
                         continue
                     end_position = end_match.end() + find_end_of_line(
-                        region.source[end_match.end():]
+                        region.source[end_match.end() :]
                     )
-                    text = region.source[start_match.start(): end_position]
+                    text = region.source[start_match.start() : end_position]
 
                 if text[-1] != "\n":
                     text += "\n"

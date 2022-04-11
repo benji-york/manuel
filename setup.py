@@ -14,7 +14,7 @@
 ##############################################################################
 """Setup for manuel package."""
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst') as readme:
     with open('CHANGES.rst') as changes:
@@ -43,18 +43,18 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'License :: OSI Approved :: Apache Software License',
-        ],
+    ],
     license='Apache Software License, Version 2.0',
     extras_require={
         'tests': tests_require,
-        },
+    },
     tests_require=tests_require,
     test_suite='manuel.tests.test_suite',
     install_requires=[
         'setuptools',
         'six',
-        ],
+    ],
     include_package_data=True,
     long_description=long_description,
     keywords=['testing', 'documentation'],
-    )
+)
