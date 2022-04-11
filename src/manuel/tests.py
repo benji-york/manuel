@@ -76,7 +76,7 @@ def test_suite():
         "README.txt",
         "bugs.txt",
         "capture.txt",
-        "myst-example.md",
+        "myst-markdown.md",
     ]
 
     optionflags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
