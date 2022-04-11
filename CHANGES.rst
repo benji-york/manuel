@@ -7,6 +7,7 @@ CHANGES
 - Fix test detection in Python 2 which was broken since 1.10.0.
   (`#20 <https://github.com/benji-york/manuel/issues/20>`_)
 - Add Python 3.9 and 3.10 to tox config.
+- Start with MyST markdown extensions. Module "codeblock" is the first. @ksuess
 
 
 1.10.1 (2018-11-15)
