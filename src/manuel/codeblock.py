@@ -10,11 +10,10 @@ CODEBLOCK_START_RST = re.compile(
 CODEBLOCK_END_RST = re.compile(r"(\n\Z|\n(?=\S))")
 
 CODEBLOCK_START_MYST = re.compile(
-    r"(^(```python)|(% invisible-code-block:\s+python)$)",
+    r"((^```python)|(^% invisible-code-block:\s+python)$)",
     re.MULTILINE,
 )
-CODEBLOCK_END_MYST = re.compile(r"(\n(?=(```)?\n))")
-#  foo_end = re.compile('(\\n(?=(```)?\\n\\n))')
+CODEBLOCK_END_MYST = re.compile(r"(\n(?=```\n))|((?:% [\S ]*)\n(?=\n))")
 
 
 class CodeBlock(object):
