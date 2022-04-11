@@ -3,6 +3,7 @@ bin/
 develop-eggs/
 dist/
 docs/
+_build/
 src/manuel.egg-info/
 parts/
 *.pyc
