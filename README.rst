@@ -14,7 +14,7 @@ accomplish with low-context unit tests.
 
 Here's an example of how Manuel works: lets say that you are creating a new Python
 library and want to develop it in a
-`ducoumentation-driven<https://pyvideo.org/pycon-us-2011/pycon-2011--documentation-driven-development.html>`_
+`documentation-driven <https://pyvideo.org/pycon-us-2011/pycon-2011--documentation-driven-development.html>`_
 fashion, so you create an introduction for your README
 
 ::
@@ -43,7 +43,6 @@ it would inform you of the problem, like so::
 .. -> addly_error
 
 .. code-block:: python
-
     import manuel.doctest
     import manuel
 
@@ -59,6 +58,5 @@ it would inform you of the problem, like so::
     error = document.formatted()
 
 ..
-
     >>> if addly_error != error:
     ...     print(''.join(difflib.unified_diff(addly_error.splitlines(keepends=True), error.splitlines(keepends=True))), end='')
