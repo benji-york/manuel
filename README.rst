@@ -8,8 +8,8 @@
 Manuel
 ======
 
-Manuel helps you write strong documentattion that makes your your library, API, or
-project ledgable to the reader in a way that is hard to accomplish otherwise.
+Manuel helps you write strong documentation that makes your your library, API, or
+project understandable to the reader in a way that is hard to accomplish otherwise.
 
 Here's an example of how Manuel works: lets say that you are creating a new Python
 library and want to develop it in a
@@ -43,7 +43,7 @@ fashion, so you create an introduction to the module as a README.
 
 Even simple documentation like the above makes your communication much more powerful.
 Conversely, having errors in your documentation impedes your user's progress and
-reflects poory on your project.
+reflects poorly on your project.
 
 You may have noticed the error in the example above.  What if you had a way to ensure
 that the documentation you write is correct?  That's where Manuel comes in.  If you were
