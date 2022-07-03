@@ -41,10 +41,13 @@ fashion, so you create an introduction to the module as a README.
 
 .. -> addly_readme
 
-You may have noticed an error in the documentation above, but some errors are not as
-easy to spot.  What if you had a way to ensure that the documentation you write is
-correct?  That's where Manuel comes in.  If you were using Manuel to validate your docs,
-it would inform you of the problem, like so::
+Even simple documentation like the above makes your communication much more powerful.
+Conversely, having errors in your documentation impedes your user's progress and
+reflects poory on your project.
+
+You may have noticed the error in the example above.  What if you had a way to ensure
+that the documentation you write is correct?  That's where Manuel comes in.  If you were
+using Manuel to validate your docs, it would inform you of the problem, like so::
 
     File "<memory>", line 5, in <memory>
     Failed example:
