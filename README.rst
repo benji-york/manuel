@@ -70,7 +70,6 @@ it would inform you of the problem, like so::
     error = document.formatted()
 
 ..
-
-    >>> # Verify that the error is actually generated.
+    Verify that the error is actually generated.
     >>> from tests.helpers import print_diff
     >>> print_diff(addly_error, error)
