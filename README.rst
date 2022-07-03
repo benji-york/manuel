@@ -8,31 +8,45 @@
 Manuel
 ======
 
-Manuel lets you write strong documentattion and tests in a style that makes your your
-library, API, or project understandable to the reader in a way that is difficult to
-accomplish with low-context unit tests.
+Manuel helps you write strong documentattion that makes your your library, API, or
+project ledgable to the reader in a way that is hard to accomplish otherwise.
 
 Here's an example of how Manuel works: lets say that you are creating a new Python
 library and want to develop it in a
 `documentation-driven <https://pyvideo.org/pycon-us-2011/pycon-2011--documentation-driven-development.html>`_
-fashion, so you create an introduction for your README
+fashion, so you create an introduction to the module as a README.
+
+
+.. code-block: python
+
+    # Behind-the-scenese code to build a fake module so the below example works.
+    import sys
+
+    class AddlyModule:
+
+        @staticmethod
+        def add(a: int, b: int) -> int:
+            return a + b
+
+    sys.modules['addly'] = AddlyModule()
 
 ::
 
     Addly is a library that provides all your adding needs.  Using Addly is as easy as
     importing the library and calling the add() function::
 
+        >>> import addly
         >>> addly.add(2, 2)
         5
 
 .. -> addly_readme
 
 You may have noticed an error in the documentation above, but some errors are not as
-easy to spot.  What if you had a way to ensure that the documentation you wrote is
+easy to spot.  What if you had a way to ensure that the documentation you write is
 correct?  That's where Manuel comes in.  If you were using Manuel to validate your docs,
 it would inform you of the problem, like so::
 
-    File "<memory>", line 4, in <memory>
+    File "<memory>", line 5, in <memory>
     Failed example:
         addly.add(2, 2)
     Expected:
@@ -42,21 +56,21 @@ it would inform you of the problem, like so::
 
 .. -> addly_error
 
-.. code-block:: python
-    import manuel.doctest
+.. XXX make above 'File "<memory>"' bit nicer.
+
+.. code-block: python
+
+    # Run the above README (addly_readme) through Maneul and capture the error.
+    from tests.helpers import checker
     import manuel
-
-    class AddlyModule:
-
-        @staticmethod
-        def add(a: int, b: int) -> int:
-            return a + b
-
-    m = manuel.doctest.Manuel()
+    import manuel.doctest
+    m = manuel.doctest.Manuel(checker=checker)
     document = manuel.Document(addly_readme)
-    document.process_with(m, globs={'addly': AddlyModule()})
+    document.process_with(m, globs={})
     error = document.formatted()
 
 ..
-    >>> if addly_error != error:
-    ...     print(''.join(difflib.unified_diff(addly_error.splitlines(keepends=True), error.splitlines(keepends=True))), end='')
+
+    >>> # Verify that the error is actually generated.
+    >>> from tests.helpers import print_diff
+    >>> print_diff(addly_error, error)
