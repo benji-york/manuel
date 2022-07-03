@@ -59,7 +59,7 @@ using Manuel to validate your docs, it would inform you of the problem, like so:
 
 .. -> addly_error
 
-.. XXX make above 'File "<memory>"' bit nicer.
+.. XXX make above 'File "<memory>"...' line a bit nicer.
 
 .. code-block: python
 
