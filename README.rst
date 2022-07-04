@@ -236,3 +236,15 @@ Now when we run Manuel, no errors are generated.
     document.process_with(m, globs={})
     result = document.formatted()
     assert result == ''
+
+
+Summary
+=======
+
+To review: to use Manuel in a documentation-driven development cycle you
+
+1. write a little more documentation that includes an example
+2. run Manuel and see how that new example fails
+3. add code to your system that makes the new example pass (and doesn't break existing
+   examples)
+4. repeat the loop
