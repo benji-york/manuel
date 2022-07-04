@@ -352,3 +352,9 @@ class Manuel(object):
         m.__extend(self)
         m.__extend(other)
         return m
+
+    def __call__(self, source, globs={}):
+        document = Document(source)
+        document.process_with(self, globs=globs)
+        result = document.formatted()
+        return result

@@ -46,37 +46,27 @@ Even simple documentation like the above makes your communication much more powe
 Conversely, having errors in your documentation impedes your user's progress and
 reflects poorly on your project.
 
+
+.. code-block: python
+
+    from tests.helpers import checker
+    import manuel
+    import manuel.doctest
+    m = manuel.doctest.Manuel(checker=checker)
+
 You may have noticed the error in the example above.  What if you had a way to ensure
 that the documentation you write is correct?  That's where Manuel comes in.  If you were
-using Manuel to validate your docs, it would inform you of the problem, like so::
+using Manuel to validate your docs, it would inform you of the problem.
 
-    File "<memory>", line 6, in <memory>
+.. >>> print(m(readme), end='')
+::
+    File "README.txt", line 2, in README.txt
     Failed example:
         addly.add(2, 2)
     Expected:
         5
     Got:
         4
-
-.. -> example
-
-.. XXX make above 'File "<memory>"...' line a bit nicer.
-
-.. code-block: python
-
-    # Run the above README (readme) through Maneul and capture the error.
-    from tests.helpers import checker
-    import manuel
-    import manuel.doctest
-    m = manuel.doctest.Manuel(checker=checker)
-    document = manuel.Document(readme)
-    document.process_with(m, globs={})
-    result = document.formatted()
-
-..
-    Verify that the error is actually generated.
-    >>> from tests.helpers import print_diff
-    >>> print_diff(example, result)
 
 
 A worked example
@@ -129,6 +119,7 @@ so we get an error.
     document = manuel.Document(readme)
     document.process_with(m, globs={})
     result = document.formatted()
+    from tests.helpers import print_diff
 
 ..
     >>> print_diff(result, example)
