@@ -241,7 +241,7 @@ Now when we run Manuel, no errors are generated.
 Summary
 =======
 
-To review: to use Manuel in a documentation-driven development cycle you
+To use Manuel in a documentation-driven development cycle you:
 
 1. write a little more documentation that includes an example
 2. run Manuel and see how that new example fails
