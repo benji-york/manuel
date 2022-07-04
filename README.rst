@@ -68,6 +68,7 @@ like so:
 
 .. >>> print(result := run_manuel(readme), end='')
 ::
+
     File "README.txt", line 2, in README.txt
     Failed example:
         addly.add(2, 2)
