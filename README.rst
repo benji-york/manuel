@@ -50,7 +50,7 @@ You may have noticed the error in the example above.  What if you had a way to e
 that the documentation you write is correct?  That's where Manuel comes in.  If you were
 using Manuel to validate your docs, it would inform you of the problem, like so::
 
-    File "<memory>", line 6, in <memory>
+    File "README.txt", line 2, in README.txt
     Failed example:
         addly.add(2, 2)
     Expected:
@@ -59,8 +59,6 @@ using Manuel to validate your docs, it would inform you of the problem, like so:
         4
 
 .. -> example
-
-.. XXX make above 'File "<memory>"...' line a bit nicer.
 
 .. code-block: python
 
@@ -72,11 +70,13 @@ using Manuel to validate your docs, it would inform you of the problem, like so:
     document = manuel.Document(readme)
     document.process_with(m, globs={})
     result = document.formatted()
+    def tail(n, s):
+        return '\n'.join(s.splitlines()[n:])
 
 ..
     Verify that the error is actually generated.
     >>> from tests.helpers import print_diff
-    >>> print_diff(example, result)
+    >>> print_diff(tail(1, example), tail(1, result))
 
 
 A worked example
