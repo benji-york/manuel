@@ -88,8 +88,7 @@ def break_up_region(original, new):
     # figure out if there are any lines after the given region
     assert new.source[-1] == '\n', 'all lines must end with a newline'
     lines_in_new = new.source.count('\n')
-    after_lines = lines[len(before_lines) + lines_in_new :]
-    if after_lines:
+    if after_lines := lines[len(before_lines) + lines_in_new :]:
         first_line_after_new = new.lineno + lines_in_new
         new_regions.append(Region(first_line_after_new, lines_to_string(after_lines)))
 
@@ -226,7 +225,7 @@ class Document(RegionContainer):
         region2 = Region(region.lineno + lines_in_source1, source2)
         self.regions.insert(region_index, region2)
         self.regions.insert(region_index, region1)
-        if not region.source == source1 + source2:
+        if region.source != source1 + source2:
             raise RuntimeError(
                 'when splitting a region, combined results do ' 'not equal the input'
             )
@@ -297,21 +296,9 @@ class Manuel(object):
     _debug = False
 
     def __init__(self, parsers=None, evaluaters=None, formatters=None):
-        if parsers is not None:
-            self.parsers = parsers
-        else:
-            self.parsers = []
-
-        if evaluaters is not None:
-            self.evaluaters = evaluaters
-        else:
-            self.evaluaters = []
-
-        if formatters is not None:
-            self.formatters = formatters
-        else:
-            self.formatters = []
-
+        self.parsers = parsers if parsers is not None else []
+        self.evaluaters = evaluaters if evaluaters is not None else []
+        self.formatters = formatters if formatters is not None else []
         # other instances that this one has been extended with
         self.others = []
 

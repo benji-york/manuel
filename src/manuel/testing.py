@@ -40,8 +40,7 @@ class TestCase(unittest.TestCase):
     def runTest(self):
         self.regions.evaluate_with(self.manuel, self.globs)
         self.regions.format_with(self.manuel)
-        results = [r.formatted for r in self.regions if r.formatted]
-        if results:
+        if results := [r.formatted for r in self.regions if r.formatted]:
             DIVIDER = '-' * 70 + '\n'
             raise real_doctest.DocTestCase.failureException(
                 '\n' + DIVIDER + DIVIDER.join(results)
@@ -58,7 +57,7 @@ class TestCase(unittest.TestCase):
 
     def shortDescription(self):
         if self.regions.id:
-            return self.regions.location + ':' + self.regions.id
+            return f'{self.regions.location}:{self.regions.id}'
         else:
             return self.regions.location
 
@@ -232,7 +231,7 @@ class TestFactory:
         test_file.filename = filename = os.path.basename(path)
         name = _not_word.sub('_', os.path.splitext(filename)[0])
         if not name.startswith('test'):
-            name = 'test_' + name
+            name = f'test_{name}'
 
         test_file.__name__ = name
 

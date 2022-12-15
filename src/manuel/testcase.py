@@ -6,7 +6,7 @@ import textwrap
 
 punctuation = re.escape(string.punctuation)
 SECTION_TITLE = re.compile(r'^.+$', re.MULTILINE)
-SECTION_UNDERLINE = re.compile('^[' + punctuation + ']+\s*$', re.MULTILINE)
+SECTION_UNDERLINE = re.compile(f'^[{punctuation}' + ']+\s*$', re.MULTILINE)
 MARKER = re.compile(r'^.. test-case: (\S+)', re.MULTILINE)
 
 

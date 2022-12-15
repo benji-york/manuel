@@ -36,18 +36,14 @@ def find_captures(document):
             """Is the indentation of a line match what we're looking for?"""
             line = normalize_whitespace(line)
 
-            if not line.strip():
-                # the line consists entirely of whitespace (or nothing at all),
-                # so is not considered to be of the appropriate indentation
-                return False
-
-            if line.startswith(indent):
-                if line[len(indent)] not in string.whitespace:
-                    return True
-
-            # if none of the above found the indentation to be a match, it is
-            # not a match
-            return False
+            return (
+                bool(
+                    line.startswith(indent)
+                    and line[len(indent)] not in string.whitespace
+                )
+                if line.strip()
+                else False
+            )
 
         # now that we've extracted the information we need, lets slice up the
         # document's regions to match
