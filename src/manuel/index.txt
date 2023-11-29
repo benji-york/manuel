@@ -318,10 +318,10 @@ and :data:`checker` arguments.
 
     m = manuel.doctest.Manuel(optionflags=optionflags, checker=checker)
 
-See the `doctest documentation <http://docs.python.org/library/doctest.html>`_
+See the `doctest documentation <https://docs.python.org/library/doctest.html>`_
 for more information about the `available options
-<http://docs.python.org/library/doctest.html#doctest-options>`_  and `output
-checkers <http://docs.python.org/library/doctest.html#outputchecker-objects>`_
+<https://docs.python.org/library/doctest.html#doctest-options>`_  and `output
+checkers <https://docs.python.org/library/doctest.html#outputchecker-objects>`_
 
 
 .. note::
@@ -329,7 +329,7 @@ checkers <http://docs.python.org/library/doctest.html#outputchecker-objects>`_
    :mod:`zope.testing.renormalizing` provides an :class:`OutputChecker`
    for smoothing out differences between actual and expected output for things
    that are hard to control (like memory addresses and time).  See the
-   `module's doctests <http://svn.zope.org/zope.testing/trunk/src/zope/testing/renormalizing.py?view=markup>`_
+   `module's documentation <https://zopetesting.readthedocs.io/en/latest/renormalizing.html>`_
    for more information on how it works.  Here's a short example that
    smoothes over the differences between CPython's and PyPy's NameError
    messages:
@@ -459,9 +459,9 @@ intended document contents will remain.  Like so::
 Code Blocks
 ===========
 
-`Sphinx <http://sphinx.pocoo.org/>`_ and other docutils `extensions
-<http://docutils.sourceforge.net/sandbox/code-block-directive/docs/syntax-highlight.html>`_
-provide a `"code-block" directive <http://sphinx.pocoo.org/markup/code.html>`_,
+`Sphinx <https://www.sphinx-doc.org/>`_ and other docutils `extensions
+<https://docutils.sourceforge.net/sandbox/code-block-directive/docs/syntax-highlight.html>`_
+provide a `"code-block" directive <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-code-block>`_,
 which allows inlined snippets of code in reST documents.
 
 The :mod:`manuel.codeblock` module provides the ability to execute the contents
