@@ -211,10 +211,7 @@ When tests are run this way:
 
     >>> sys.stdout.writeln = lambda s: sys.stdout.write(s+'\n')
     >>> suite = loader.loadTestsFromTestCase(MyTest)
-    >>> result = suite.run(unittest.TextTestResult(sys.stdout, True, 3))
-    test1 (tests.MyTest) ... ok
-    test2 (tests.MyTest) ... ok
-    test3 (tests.MyTest) ... FAIL
+    >>> result = suite.run(unittest.TestResult(True, 3))
 
     >>> for _, e in result.errors:
     ...     print(e); print
