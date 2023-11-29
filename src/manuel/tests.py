@@ -37,6 +37,8 @@ checker = zope.testing.renormalizing.RENormalizing(
             r"<\1 object",
         ),
         (re.compile(r"<SRE_Match object"), r"<_sre.SRE_Match object"),
+        # python 3.11 unittest output is slightly different
+        (re.compile(r"test(\d) \(tests.MyTest.test\d\)"), r"test\1 (tests.MyTest)"),
     ]
 )
 
