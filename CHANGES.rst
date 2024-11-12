@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+1.13.0 (2024-11-12)
+-------------------
+
+- Include*.md files in wheel
+  These are needed by the test suite, which is also included in the wheel.
+- Fix tests on python3.11
+- Update some web links
+- Update pyinstaller to 6.1.0 for python >= 3.11 support
+- doctest: use outputchecker argument also in debug mode.
+  Fixes #38
+- Remove references to old "six" module
+
+
 1.12.4 (2022-06-24)
 -------------------
 
